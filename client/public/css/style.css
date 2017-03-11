@@ -1,0 +1,41 @@
+#headline_container{
+    background-color: #1a237e;
+    margin-top:10px;
+    margin-left: 270px;
+    margin-right: 270px;
+    border-radius: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+#head_line{
+    /*background-color: black;*/
+    color: white;
+    text-align: center;
+}
+
+
+/*-------------------------------ADD TODO--------------------------------*/
+#addto_container{
+    background-color: black;
+    margin-left: 120px;
+    margin-right: 120px;
+}
+
+#addtodo_headline{
+    background-color:#b388ff;
+    color: white;
+    text-align: center;
+}
+
+#todo_entry{
+    margin-left: 120px;
+    margin-right: 120px;
+    padding:0px 20px 20px 20px;
+}
+
+/*---------------------------------Show Todos------------------------------*/
+#todo_table{
+    margin-left:20px;
+    margin-right:25px
+}

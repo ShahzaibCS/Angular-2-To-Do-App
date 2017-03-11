@@ -8,5 +8,6 @@ var router = express.Router()
 var todos = require('./../controllers/todos');
 
 router.post('/add',todos.add);
+router.get('/show',todos.selectall);
 
 module.exports = router;

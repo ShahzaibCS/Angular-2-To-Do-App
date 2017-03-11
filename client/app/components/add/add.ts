@@ -1,4 +1,14 @@
-import {Component} from '@angular/core';
+// import {Component} from '@angular/core';
+import {
+  Component,
+  Input,
+  trigger,
+  state,
+  style,
+  transition,
+  animate
+} from '@angular/core';
+
 import { MaterialModule } from '@angular/material';
 import {Http,RequestOptions,Headers} from '@angular/http';
 
@@ -38,18 +48,36 @@ export class Add{
     //     localStorage.setItem(id.value,JSON.stringify(todoObj));
     // }
 
-    addToDo(name:HTMLInputElement,status:HTMLInputElement){
+    addToDo(name:HTMLInputElement){
+        console.log(`Task Name: ${name.value}`);
+        // console.log(`To-Do status: ${status.value}`);
+
         var headers = new Headers();
         headers.append('content-type','application/json');
         var options = new RequestOptions(headers);
 
         var todo = {task_name:name.value}  //Request body
+        console.log(`New todo : ${todo}`);
 
-        this.http.post('localhost:3002/todos/add',todo,options)
+        this.http.post('http://localhost:3002/todos/add',todo,options)
             .subscribe((bodyData)=>{
                 console.log("Submited data");
                 console.log(bodyData);
+                return false;
             })
+
+        return false; //Preventing page to reload    
+    }
+
+    // addToDo(name:HTMLInputElement){
+    //     console.log(`Task Name: ${name.value}`);
+    //     // console.log(`To-Do status: ${status.value}`);
+    //     return false; //Preventing page to reload    
+    // }
+    
+
+    todoStatus(){
+        
     }
 
     sampleRequest(){

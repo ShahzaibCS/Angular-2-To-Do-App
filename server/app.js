@@ -30,7 +30,7 @@ app.use(cookieParser());
 // app.use(express.static(path.join(__dirname, 'public')));
 
 console.log("Director name");
-consoled.log(__dirname);
+console.log(__dirname);
 
 //Static file server
 app.use(express.static('./../client'));

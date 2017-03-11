@@ -57,6 +57,54 @@ exports.add = function(req,res){
             }
 
 
+            // var todo = {
+            //     task_name:con.task_name,
+            //     createdAt:new Date()
+            // }
+            //
+            // //Saving todo
+            // var todo_document = new Con(todo);
+            // todo_document.save(function(err,resp){
+            //
+            //     if(err){
+            //
+            //         console.log({
+            //             status:false,
+            //             resCode:400,
+            //             isError:true,
+            //             message:"Internal error while storing data",
+            //             error:err
+            //         });
+            //         // res.send({
+            //         //     status:false,
+            //         //     resCode:400,
+            //         //     isError:true,
+            //         //     message:"Internal error while storing data",
+            //         //     // error:err
+            //         // })
+            //
+            //     }else if(resp){
+            //
+            //         console.log({
+            //             status:true,
+            //             resCode:200,
+            //             isError:false,
+            //             message:"Data saved successfully",
+            //             data:resp
+            //         });
+            //         // res.send({
+            //         //     status:true,
+            //         //     resCode:200,
+            //         //     isError:false,
+            //         //     message:"Data saved successfully"
+            //         //     // data:resp
+            //         // });
+            //
+            //     }
+            //
+            // })
+
+        }else{
             var todo = {
                 task_name:con.task_name,
                 createdAt:new Date()
@@ -103,16 +151,19 @@ exports.add = function(req,res){
                 }
 
             })
-
         }
 
     })
 
 }
 
+exports.todo = function(req,res){
+
+}
+
 exports.selectall = function(req,res){
 
-    Con.find({}).exec(function(err,todos){
+    Con.find({},{__v:0}).exec(function(err,todos){
 
         if(err){
 
@@ -137,7 +188,7 @@ exports.selectall = function(req,res){
                 status:true,
                 resCode:200,
                 isError:false,
-                message:"All todos found successfully",
+                message:"Data loaded successfully",
                 data:todos
             });
 
@@ -145,9 +196,10 @@ exports.selectall = function(req,res){
             //     status:true,
             //     resCode:200,
             //     isError:false,
-            //     message:"All todos found successfully",
+            //     message:"Data loaded successfully",
             //     data:todos
             // })
+            // res.redirect('/add')
 
         }
 
